@@ -139,6 +139,10 @@
   "route": {
     "rules": [
       {
+        "ip_version": 6,
+        "action": "reject"
+      },
+      {
         "type": "logical",
         "mode": "or",
         "rules": [
