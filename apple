@@ -22,7 +22,7 @@
         "tag": "google",
         "type": "https",
         "server": "8.8.8.8",
-        "detour": "手动选择"
+        "detour": "自建节点"
       },
       {
         "tag": "fakeip",
@@ -105,10 +105,26 @@
     "reverse_mapping": true
   },
   "outbounds": [
+    {"tag": "默认代理", "type": "selector", "outbounds": [“自建节点”, "香港手动", "台湾手动", "日本手动", "狮城手动", "美国手动", "其他手动"]},
+    {"tag": "AI", "type": "selector", "outbounds": [“自建节点”, "香港手动", "台湾手动", "日本手动", "狮城手动", "美国手动", "其他手动"]},
+    {"tag": "YouTube", "type": "selector", "outbounds": [“自建节点”, "香港手动", "台湾手动", "日本手动", "狮城手动", "美国手动", "其他手动"]},
+    {"tag": "Google", "type": "selector", "outbounds": [“自建节点”, "香港手动", "台湾手动", "日本手动", "狮城手动", "美国手动", "其他手动"]},
+    {"tag": "Github", "type": "selector", "outbounds": [“自建节点”, "香港手动", "台湾手动", "日本手动", "狮城手动", "美国手动", "其他手动"]},
+    {"tag": "Telegram", "type": "selector", "outbounds": [“自建节点”, "香港手动", "台湾手动", "日本手动", "狮城手动", "美国手动", "其他手动"]},
+    {"tag": "TikTok", "type": "selector", "outbounds": [“自建节点”, "香港手动", "台湾手动", "日本手动", "狮城手动", "美国手动", "其他手动"]},
+    {"tag": "Netflix", "type": "selector", "outbounds": [“自建节点”, "香港手动", "台湾手动", "日本手动", "狮城手动", "美国手动", "其他手动"]},
+    {"tag": "Wallet", "type": "selector", "outbounds": [“自建节点”, "香港手动", "台湾手动", "日本手动", "狮城手动", "美国手动", "其他手动"]},
+    {"tag": "Steam", "type": "selector", "outbounds": [“自建节点”, "香港手动", "台湾手动", "日本手动", "狮城手动", "美国手动", "其他手动"]},
+    {"tag": "Microsoft", "type": "selector", "outbounds": [“自建节点”, "香港手动", "台湾手动", "日本手动", "狮城手动", "美国手动", "其他手动"]},
+    {"tag": "OneDrive", "type": "selector", "outbounds": [“自建节点”, "香港手动", "台湾手动", "日本手动", "狮城手动", "美国手动", "其他手动"]},
+    {"tag": "漏网之鱼", "type": "selector", "outbounds": [“自建节点”, "香港手动", "台湾手动", "日本手动", "狮城手动", "美国手动", "其他手动", "手动选择", "自动选择", "直连"]},
+    {"tag": "自建节点", "type": "selector", "outbounds": []},   
+    {"tag": "香港手动", "type": "selector", "outbounds": []},
+    {"tag": "台湾手动", "type": "selector", "outbounds": []},   
     {"tag": "日本手动", "type": "selector", "outbounds": []},
     {"tag": "狮城手动", "type": "selector", "outbounds": []},
-    {"tag": "香港手动", "type": "selector", "outbounds": []},
     {"tag": "美国手动", "type": "selector", "outbounds": []},
+    {"tag": "其他手动", "type": "selector", "outbounds": []},
     {"tag": "手动选择", "type": "selector", "outbounds": []},
     {"tag": "自动选择", "type": "urltest", "outbounds": [], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100},
     {"tag": "延迟辅助", "type": "urltest", "outbounds": ["直连"], "url": "http://connect.rom.miui.com/generate_204", "interval": "30m"},
@@ -208,23 +224,23 @@
       },
       {
         "rule_set": "geosite-category-ai-!cn",
-        "outbound": "手动选择"
+        "outbound": "AI"
       },
       {
         "rule_set": "geosite-youtube",
-        "outbound": "手动选择"
+        "outbound": "YouTube"
       },
       {
         "rule_set": "geosite-google",
-        "outbound": "手动选择"
+        "outbound": "Google"
       },
       {
         "rule_set": "geosite-github",
-        "outbound": "手动选择"
+        "outbound": "Github"
       },
       {
         "rule_set": "geosite-onedrive",
-        "outbound": "手动选择"
+        "outbound": "OneDrive"
       },
       {
         "rule_set": "geosite-microsoft@cn",
@@ -232,7 +248,7 @@
       },
       {
         "rule_set": "geosite-microsoft",
-        "outbound": "手动选择"
+        "outbound": "Microsoft"
       },
       {
         "rule_set": "geosite-apple",
@@ -240,31 +256,31 @@
       },
       {
         "rule_set": "geosite-telegram",
-        "outbound": "手动选择"
+        "outbound": "Telegram"
       },
       {
         "rule_set": "geosite-tiktok",
-        "outbound": "手动选择"
+        "outbound": "TikTok"
       },
       {
         "rule_set": "geosite-netflix",
-        "outbound": "手动选择"
+        "outbound": "Netflix"
       },
       {
         "rule_set": "geosite-paypal",
-        "outbound": "手动选择"
+        "outbound": "Wallet"
       },
       {
         "rule_set": "geosite-binance",
-        "outbound": "手动选择"
+        "outbound": "Wallet"
       },
       {
         "rule_set": "geosite-okx",
-        "outbound": "手动选择"
+        "outbound": "Wallet"
       },
       {
         "rule_set": "geosite-category-cryptocurrency",
-        "outbound": "手动选择"
+        "outbound": "Wallet"
       },
       {
         "rule_set": "geosite-steam@cn",
@@ -272,11 +288,11 @@
       },
       {
         "rule_set": "geosite-steam",
-        "outbound": "手动选择"
+        "outbound": "Steam"
       },
       {
         "rule_set": "geosite-geolocation-!cn",
-        "outbound": "手动选择"
+        "outbound": "自建节点"
       },
       {
         "inbound": "mixed-in",
@@ -284,7 +300,7 @@
       },
       {
         "rule_set": "geoip-telegram",
-        "outbound": "手动选择"
+        "outbound": "Telegram"
       },
       {
         "rule_set": "geoip-cn",
@@ -341,7 +357,7 @@
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
       }
     ],
-    "final": "手动选择",
+    "final": "漏网之鱼",
     "default_http_client": "直连下载",
     "auto_detect_interface": true,
     "default_domain_resolver": {
